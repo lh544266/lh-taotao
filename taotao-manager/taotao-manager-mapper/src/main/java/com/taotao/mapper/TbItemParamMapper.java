@@ -1,3 +1,5 @@
+package com.taotao.mapper;
+
 import com.taotao.pojo.TbItemParam;
 import com.taotao.pojo.TbItemParamExample;
 import java.util.List;
