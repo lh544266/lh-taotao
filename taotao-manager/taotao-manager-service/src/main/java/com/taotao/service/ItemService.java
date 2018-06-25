@@ -9,7 +9,7 @@ public interface ItemService {
     //根据id查询Item
     TbItem getItem(long id);
     //新增商品
-    TaotaoResult insertItem(TbItem item);
+    TaotaoResult insertItem(TbItem item, String desc, String itemParam) throws Exception ;
    /* //删除单个商品商品
     TaotaoResult deleteItem(long id);*/
    //批量删除商品

@@ -3,6 +3,7 @@ package com.taotao.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.taotao.common.pojo.EUDataGridResult;
+import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.mapper.TbContentMapper;
 import com.taotao.pojo.TbContent;
 import com.taotao.pojo.TbContentExample;
@@ -10,6 +11,7 @@ import com.taotao.service.ContentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -33,4 +35,26 @@ public class ContentServiceImpl implements ContentService {
         result.setTotal(info.getTotal());
         return result;
     }
+    //新增内容的实现
+    @Override
+    public TaotaoResult insertContent(TbContent content) {
+       //补全content类
+        content.setCreated(new Date());
+        content.setUpdated(new Date());
+        contentMapper.insert(content);
+        return TaotaoResult.ok();
+    }
+    //删除内容的实现
+    @Override
+    public TaotaoResult deleteContent(long contentId) {
+        contentMapper.deleteByPrimaryKey(contentId);
+        return TaotaoResult.ok();
+    }
+    //修改内容的实现
+    @Override
+    public TaotaoResult updateContent(TbContent content) {
+        contentMapper.updateByPrimaryKeyWithBLOBs(content);
+        return TaotaoResult.ok();
+    }
+
 }

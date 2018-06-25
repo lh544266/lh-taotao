@@ -24,8 +24,8 @@ public class ItemController {
     //保存新增item
     @RequestMapping(value = "/item/save",method=RequestMethod.POST)
     @ResponseBody
-    public TaotaoResult insertItem(TbItem item){
-        TaotaoResult result = itemService.insertItem(item);
+    public TaotaoResult insertItem(TbItem item, String desc, String itemParam) throws Exception {
+        TaotaoResult result = itemService.insertItem(item,desc,itemParam);
         return result;
     }
     //删除商品
