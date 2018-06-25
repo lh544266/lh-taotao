@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>taotao-manager-service</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging><!--定义打包方式，这里是jar-->
 
     <name>taotao-manager-service</name>
